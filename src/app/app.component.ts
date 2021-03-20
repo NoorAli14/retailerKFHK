@@ -14,7 +14,8 @@ import { FuseTranslationLoaderService } from '@fuse/services/translation-loader.
 import { navigation } from 'app/navigation/navigation';
 import { locale as navigationEnglish } from 'app/navigation/i18n/en';
 import { locale as navigationTurkish } from 'app/navigation/i18n/tr';
-
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
     selector   : 'app',
     templateUrl: './app.component.html',
@@ -48,9 +49,19 @@ export class AppComponent implements OnInit, OnDestroy
         private _fuseSplashScreenService: FuseSplashScreenService,
         private _fuseTranslationLoaderService: FuseTranslationLoaderService,
         private _translateService: TranslateService,
-        private _platform: Platform
+        private _platform: Platform,
+        private _matIconRegistry: MatIconRegistry,
+        private _domSanitizer: DomSanitizer
     )
     {
+        // register icon
+
+        this._matIconRegistry
+        .addSvgIcon(
+            'logout',
+            this._domSanitizer.bypassSecurityTrustResourceUrl('../assets/icons/log-out.svg')
+        );
+
         // Get default navigation
         this.navigation = navigation;
 

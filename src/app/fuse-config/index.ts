@@ -10,14 +10,14 @@ import { FuseConfig } from '@fuse/types';
 
 export const fuseConfig: FuseConfig = {
     // Color themes can be defined in src/app/app.theme.scss
-    colorTheme      : 'theme-default',
+    colorTheme      : 'theme-rubix-retailer',
     customScrollbars: true,
     layout          : {
         style    : 'vertical-layout-1',
         width    : 'fullwidth',
         navbar   : {
-            primaryBackground  : 'fuse-navy-700',
-            secondaryBackground: 'fuse-navy-900',
+            primaryBackground  : 'fuse-white-500',
+            secondaryBackground: 'fuse-white-500',
             folded             : false,
             hidden             : false,
             position           : 'left',
@@ -32,7 +32,7 @@ export const fuseConfig: FuseConfig = {
         footer   : {
             customBackgroundColor: true,
             background           : 'fuse-navy-900',
-            hidden               : false,
+            hidden               : true,
             position             : 'below-fixed'
         },
         sidepanel: {

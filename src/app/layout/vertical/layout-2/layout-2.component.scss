@@ -36,6 +36,11 @@ vertical-layout-2 {
 
                 // Container 3
                 > .container {
+                    content{
+                        margin: 16px;
+                        background-color: #fff;
+                        border-radius: 12px;
+                    }
                     position: relative;
                     display: flex;
                     flex: 1 1 auto;

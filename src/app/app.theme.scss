@@ -48,6 +48,20 @@ $fuse-navy: (
     )
 );
 
+
+$mat-dark-blue: (
+    500     : #2A4E85,
+    contrast: (
+        500 : #ffffff
+    )
+);
+$mat-dark-green: (
+    500   : #4FB0C7,
+    contrast: (
+        500 : #ffffff
+    )
+);
+
 // Generate Fuse color classes for custom palettes
 $custom_palettes: (
     fuse-white: $fuse-white,
@@ -118,6 +132,39 @@ body.theme-default {
     $palettes: (
         primary: $default-primary-palette,
         accent: $default-accent-palette,
+        warn: $default-warn-palette
+    );
+
+    @include fuse-color-classes($palettes);
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Define the rubix-retailer theme
+// -----------------------------------------------------------------------------------------------------
+
+// Define the primary, accent and warn palettes
+$rubix-primary-palette: mat-palette($mat-dark-green, 500);
+$rubix-accent-palette: mat-palette($mat-dark-blue, 500);
+
+// Create the Material theme object
+$theme-rubix: mat-light-theme($rubix-primary-palette, $rubix-accent-palette, $default-warn-palette);
+
+
+body.theme-rubix-retailer {
+
+    // Create an Angular Material theme from the $theme map
+    @include angular-material-theme($theme-rubix);
+
+    // Apply the theme to the Fuse Core
+    @include fuse-core-theme($theme-rubix);
+
+    // Apply the theme to the user components
+    @include components-theme($theme-rubix);
+
+    // Generate Fuse color classes for primary, accent and warn colors
+    $palettes: (
+        primary: $rubix-primary-palette,
+        accent: $rubix-accent-palette,
         warn: $default-warn-palette
     );
 

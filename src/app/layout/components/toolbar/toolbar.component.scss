@@ -5,6 +5,7 @@ toolbar {
     display: flex;
     flex: 0 0 auto;
     z-index: 4;
+    padding-top: 30px;
 
     &.below {
         z-index: 2;
@@ -15,7 +16,65 @@ toolbar {
         background: inherit !important;
         color: inherit !important;
     }
+    .username{
+        span{
+            line-height: 20px;
+            &:first-child{
+                line-height: 15px;
+            }
+        }
+    }
+    .breadcrumb{
+        h1{
+            font-size: 25px;
+        }
+        mat-list{
+            display: inline-flex;
+            padding: 0;
+            mat-list-item{
+                height: auto !important;
+                font-weight: 700;
+                position: relative;
+                &::after{
+                    content: '/';
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+                &:first-child{
+                    .mat-list-item-content{
+                        padding-left: 0 !important;
+                        font-weight: 400;
 
+                    }
+                }
+                &:last-child::after{
+                    display: none;
+                }
+
+            }
+        }
+    }
+
+    .notifiy-bell, .logout{
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background-color: #fff !important;
+        &.alert{
+            position: relative;
+            &::before{
+                content: "";
+                background: #F07C68;
+                width: 15px;
+                height: 15px;
+                position: absolute;
+                border-radius: 50%;
+                top: -5px;
+                right: -5px;
+            }
+        }
+    }
     .logo {
         display: flex;
         align-items: center;
@@ -25,7 +84,6 @@ toolbar {
         }
     }
 
-    .user-button,
     fuse-search-bar,
     .language-button,
     .chat-panel-toggle-button,

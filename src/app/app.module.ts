@@ -20,8 +20,8 @@ import { SampleModule } from 'app/main/sample/sample.module';
 
 const appRoutes: Routes = [
     {
-        path      : '**',
-        redirectTo: 'sample'
+        path      : '',
+        loadChildren: () => import('./main/beneficiary/beneficiary.module').then(m => m.BeneficiaryModule),
     }
 ];
 

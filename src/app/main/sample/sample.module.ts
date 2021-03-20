@@ -23,12 +23,8 @@ const routes = [
         TranslateModule,
 
         FuseSharedModule
-    ],
-    exports     : [
-        SampleComponent
     ]
 })
 
-export class SampleModule
-{
+export class SampleModule {
 }

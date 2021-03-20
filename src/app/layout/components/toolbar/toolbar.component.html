@@ -1,4 +1,4 @@
-<mat-toolbar class="p-0 mat-elevation-z1">
+<mat-toolbar class="p-0">
 
     <div fxFlex fxFill fxLayout="row" fxLayoutAlign="start center">
 
@@ -17,24 +17,32 @@
                 </div>
             </div>
 
-            <div class="px-8 px-md-16">
-                <fuse-shortcuts [navigation]="navigation"></fuse-shortcuts>
+            <div class="px-8 px-md-16 breadcrumb">
+                <h1>Add Beneficiary</h1>
+                <mat-list role="list">
+                    <mat-list-item role="listitem">Dashboard</mat-list-item>
+                    <mat-list-item role="listitem">Add Beneficiary</mat-list-item>
+                </mat-list>
             </div>
 
         </div>
 
-        <div class="" fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
-
-            <button mat-button [matMenuTriggerFor]="userMenu"
-                    class="user-button">
+        <div fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
                 <div fxLayout="row" fxLayoutAlign="center center">
                     <img class="avatar mr-0 mr-sm-16" src="assets/images/avatars/Velazquez.jpg">
-                    <span class="username mr-12" fxHide fxShow.gt-sm>Charlie Adams</span>
-                    <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon>
+                    <div fxLayout="column" fxHide fxShow.gt-sm class="username" fxLayoutAlign="center start">
+                        <span class="h6">Welcome</span>
+                        <span class="mr-12 h4" >
+                            <strong>
+                                Charlie Adams
+                            </strong>
+                        </span>
+                    </div>
+                    
+                    <!-- <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon> -->
                 </div>
-            </button>
 
-            <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
+            <!-- <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
 
                 <button mat-menu-item>
                     <mat-icon>account_circle</mat-icon>
@@ -51,15 +59,24 @@
                     <span>Logout</span>
                 </button>
 
-            </mat-menu>
+            </mat-menu> -->
 
-            <div class="toolbar-separator"></div>
+            <!-- <div class="toolbar-separator"></div> -->
 
-            <fuse-search-bar (input)="search($event)"></fuse-search-bar>
+            <!-- <fuse-search-bar (input)="search($event)"></fuse-search-bar> -->
 
-            <div class="toolbar-separator"></div>
+            <button mat-icon-button class="ml-40 notifiy-bell alert"
+              aria-label="notifications">
+              <mat-icon>notifications</mat-icon>
+            </button>
 
-            <button mat-button fxHide fxShow.gt-xs
+            <button mat-icon-button class="ml-24 logout mr-16"
+            aria-label="logout">
+            <mat-icon [svgIcon]="'logout'"></mat-icon>
+          </button>
+
+
+            <!-- <button mat-button fxHide fxShow.gt-xs
                     class="language-button"
                     [matMenuTriggerFor]="languageMenu">
                 <div fxLayout="row" fxLayoutAlign="center center">
@@ -93,7 +110,7 @@
             <button mat-icon-button class="navbar-toggle-button"
                     *ngIf="!hiddenNavbar && rightNavbar" (click)="toggleSidebarOpen('navbar')" fxHide.gt-md>
                 <mat-icon class="secondary-text">menu</mat-icon>
-            </button>
+            </button> -->
 
         </div>
 

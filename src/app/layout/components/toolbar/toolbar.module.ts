@@ -4,10 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
-import { FuseSearchBarModule, FuseShortcutsModule } from '@fuse/components';
 import { FuseSharedModule } from '@fuse/shared.module';
-
+import { MatListModule } from '@angular/material/list'
 import { ToolbarComponent } from 'app/layout/components/toolbar/toolbar.component';
 
 @NgModule({
@@ -20,10 +18,8 @@ import { ToolbarComponent } from 'app/layout/components/toolbar/toolbar.componen
         MatIconModule,
         MatMenuModule,
         MatToolbarModule,
-
+        MatListModule,
         FuseSharedModule,
-        FuseSearchBarModule,
-        FuseShortcutsModule
     ],
     exports     : [
         ToolbarComponent
