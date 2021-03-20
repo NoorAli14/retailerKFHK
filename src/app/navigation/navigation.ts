@@ -13,7 +13,7 @@ export const navigation: FuseNavigation[] = [
         title    : 'Beneficiaries',
         type     : 'item',
         icon     : 'local_parking',
-        url      : 'beneficiary/list',
+        url      : 'beneficiary',
 
     },
     {

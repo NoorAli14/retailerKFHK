@@ -6,20 +6,20 @@ import { BeneficiaryListComponent } from './beneficiary-list/beneficiary-list.co
 
 const routes: Routes = [
   {
-    path     : 'beneficiary/list',
+    path     : 'beneficiary',
     component: BeneficiaryListComponent,
   },
   {
-    path     : 'beneficiary',
+    path     : 'beneficiary/create',
     component: BeneficiaryCreateComponent,
   },
   {
-    path     : 'beneficiary/:id',
+    path     : 'beneficiary/edit/:id',
     component: BeneficiaryEditComponent,
   },
   {
     path: '',
-    redirectTo: 'beneficiary/list',
+    redirectTo: 'beneficiary',
   }
 
 ];
