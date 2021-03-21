@@ -18,6 +18,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatSliderModule} from '@angular/material/slider';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatIconModule,
     FlexLayoutModule,
+    MatSliderModule
   ]
 })
 export class BeneficiaryModule { }

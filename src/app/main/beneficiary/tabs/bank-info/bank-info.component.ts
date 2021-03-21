@@ -16,6 +16,13 @@ export class BankInfoComponent implements OnInit {
 
   constructor(private readonly beneficiaryService: BeneficiaryService, private readonly _formBuilder: FormBuilder,) { }
 
+  countries: string[] = [
+      "Pakistan",
+      "India",
+      "Afghanistan",
+      "England"
+  ]
+
   ngOnInit(): void {
     this.createMerchantInfoForm();
   }
@@ -45,4 +52,8 @@ export class BankInfoComponent implements OnInit {
     this._unsubscribeAll.complete();
   }
 
+
+  updateCountrySelection(): void {
+
+  }
 }

@@ -2,7 +2,8 @@ export interface Beneficiary {
     bankDetails: {
         accountNo: string;
         bankName: string;
-        bankAddress: string;
+        address1: string;
+        address2: string;
         area: string;
         city: string;
         bic: string;

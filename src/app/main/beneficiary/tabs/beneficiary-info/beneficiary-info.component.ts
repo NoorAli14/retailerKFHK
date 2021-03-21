@@ -16,6 +16,13 @@ export class BeneficiaryInfoComponent implements OnInit {
    private _unsubscribeAll: Subject<any>;
 
   constructor(private readonly beneficiaryService: BeneficiaryService, private readonly _formBuilder: FormBuilder,) { }
+  
+  countries: string[] = [
+    "Pakistan",
+    "India",
+    "Afghanistan",
+    "England"
+  ]
 
   ngOnInit(): void {
     this.createBeneficiaryDetailForm();
@@ -23,6 +30,8 @@ export class BeneficiaryInfoComponent implements OnInit {
 
   createBeneficiaryDetailForm(): void{
     this.beneficiaryDetailForm = this._formBuilder.group({
+        bankName: [0, Validators.required],
+        webLimit: [0]
       });
   }
 
@@ -44,6 +53,10 @@ export class BeneficiaryInfoComponent implements OnInit {
     // Unsubscribe from all subscriptions
     this._unsubscribeAll.next();
     this._unsubscribeAll.complete();
+  }
+
+  updateCountrySelection(): void{
+
   }
 
 }
