@@ -25,13 +25,13 @@ export class BeneficiaryTableComponent implements OnInit {
         console.log(this.response)
         this.setPaginator()
         if (this.response) {
-            this.setTable(this.response)
+            this.setTable()
         }
         this.paginator.page.subscribe(() => {
             this.sendToParent()
         })
     }
-    setTable(data) {
+    setTable() {
         this.dataSource.data = this.response['data']['list']
         this.paginator.length = this.response['data']['totalRecords']
     }
@@ -48,7 +48,8 @@ export class BeneficiaryTableComponent implements OnInit {
     }
     ngOnChanges(changes) {
         // console.log(changes)
-        this.setTable(changes['response']['currentValue'].data)
+        // this.setTable(changes['response']['currentValue'].data)
+        this.setTable()
     }
 
 }
