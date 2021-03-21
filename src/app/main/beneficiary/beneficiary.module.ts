@@ -12,6 +12,10 @@ import { TransactionSummaryComponent } from './tabs/transaction-summary/transact
 import { BeneficiaryListComponent } from './beneficiary-list/beneficiary-list.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -29,7 +33,12 @@ import { MatButtonModule } from '@angular/material/button';
     CommonModule,
     BeneficiaryRoutingModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    
+    MatTableModule,
+    MatPaginatorModule,
+    MatTooltipModule,
+    MatCardModule,
   ]
 })
 export class BeneficiaryModule { }
