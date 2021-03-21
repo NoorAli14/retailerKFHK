@@ -1,1 +1,33 @@
-<p>beneficiary-info works!</p>
+<section class="bankInfo">
+    
+    <form fxLayout="column" fxLayoutAlign="start"
+     name="form" [formGroup]="beneficiaryDetailForm">
+   
+        <div fxLayout.sm="row" fxLayout.gt-sm="row" fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutAlign.sm="space-between center" fxLayoutAlign.gt-sm="space-between center" fxFlex="1 0 auto">
+           
+            <!-- <mat-form-field appearance="outline" fxFlex.gt-sm="33" fxFlex.sm="33" [ngClass.sm]="'pr-4'" [ngClass.gt-sm]="'pr-4'">
+                <mat-label>Company Name</mat-label>
+                <input matInput formControlName="BankUserName" required [maxlength]="globalConfig.validator.maxFieldLength" >
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" fxFlex.gt-sm="33" fxFlex.sm="33" [ngClass.sm]="'pl-4'" [ngClass.gt-sm]="'pl-4'">
+                <mat-label>Pricing Plan</mat-label>
+                <mat-select formControlName="PricingPlanID" required (selectionChange)="setPricingPlanName()">
+                    <mat-option [value]="item.PricingPlanID" *ngFor="let item of pricingPlans">{{item.PricingTitle}}</mat-option>
+                </mat-select>
+            </mat-form-field> -->
+        </div>
+
+
+        <div fxLayout.sm="row" fxLayoutAlign.sm="center center" fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="center center" fxLayout="column" fxLayoutAlign="center stretch">
+            <button mat-raised-button matStepperNext class="my-4"color="accent" [disabled]="beneficiaryDetailForm.invalid"
+                aria-label="Next">
+                Next
+            </button>
+        </div>
+
+    </form>
+
+</section>
+
+

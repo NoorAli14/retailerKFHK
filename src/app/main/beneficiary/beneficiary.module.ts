@@ -12,6 +12,12 @@ import { TransactionSummaryComponent } from './tabs/transaction-summary/transact
 import { BeneficiaryListComponent } from './beneficiary-list/beneficiary-list.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -27,9 +33,16 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     BeneficiaryRoutingModule,
+    MatButtonModule,
+    MatStepperModule,
+    MatInputModule,
+    MatSelectModule,
+    MatFormFieldModule,
     MatIconModule,
-    MatButtonModule
+    FlexLayoutModule,
   ]
 })
 export class BeneficiaryModule { }

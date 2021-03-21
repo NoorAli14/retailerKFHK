@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit, OnChanges, OnDestroy } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { BeneficiaryService } from '../../beneficiary.service';
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 @Component({
   selector: 'app-beneficiary-info',
   templateUrl: './beneficiary-info.component.html',
@@ -7,9 +10,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BeneficiaryInfoComponent implements OnInit {
 
-  constructor() { }
+  public beneficiaryDetailForm: FormGroup;
+  @Input() beneficiaryInfo: any = null;
+   @Output() stepOne = new EventEmitter<any>();
+   private _unsubscribeAll: Subject<any>;
+
+  constructor(private readonly beneficiaryService: BeneficiaryService, private readonly _formBuilder: FormBuilder,) { }
 
   ngOnInit(): void {
+    this.createBeneficiaryDetailForm();
+  }
+
+  createBeneficiaryDetailForm(): void{
+    this.beneficiaryDetailForm = this._formBuilder.group({
+      });
+  }
+
+  ngOnChanges(): void{
+    if(this.beneficiaryInfo){
+      if(!this.beneficiaryDetailForm){
+        this.createBeneficiaryDetailForm();
+        this.stepOne.emit(this.beneficiaryDetailForm);
+      }
+      this.beneficiaryDetailForm.patchValue(this.beneficiaryInfo);
+    }
+  }
+ 
+  ngAfterViewInit(): void {
+    this.stepOne.emit(this.beneficiaryDetailForm);
+  }
+
+  ngOnDestroy(): void {
+    // Unsubscribe from all subscriptions
+    this._unsubscribeAll.next();
+    this._unsubscribeAll.complete();
   }
 
 }

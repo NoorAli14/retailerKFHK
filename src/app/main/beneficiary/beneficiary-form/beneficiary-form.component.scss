@@ -1,0 +1,44 @@
+::ng-deep .mat-horizontal-stepper-header-container {
+    .mat-stepper-horizontal-line {
+        border-top-width: 0px !important;
+        flex :none !important;
+        margin: none !important;
+    }
+}
+::ng-deep .mat-step-header  {
+    width: 33%;
+    border: 1.4px solid #F5F7F9;
+
+    & div.mat-step-icon {
+        width: 28px;
+        height: 28px;
+        background: #EBEBEB;
+        opacity: 0.5;
+        border-radius: 45px;
+    }
+    
+    & div.mat-step-label {
+        width: 143px;
+        height: 17px;
+        font-family: Product Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+        /* identical to box height */
+        text-align: justify;
+        text-transform: capitalize;
+        color: #ADADAD;
+    }
+  }
+
+  ::ng-deep .mat-step-header[aria-selected="true"]  {
+    background: rgba(42, 78, 133, 0.1) !important;
+    & div.mat-step-icon-selected {
+        background: #2A4E85 !important;
+        border-radius: 73px !important;
+    }
+    & div.mat-step-label.mat-step-label-active.mat-step-label-selected {
+        color: #2A4E85 !important;
+    }
+  }

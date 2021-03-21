@@ -1,1 +1,15 @@
-<p>beneficiary-form works!</p>
+<section class="beneficiaryForm">
+    <div class="outer-layer mt-1">
+        <mat-horizontal-stepper linear #stepper (selectionChange) = "stepChange($event)">
+            <mat-step label="Bank Information" [stepControl]="bankInfoForm">
+                <app-bank-info [bankInfo]="beneficiaryDetail?.BankAccountSetup" (stepOne)="bankInfoForm = $event"></app-bank-info>
+            </mat-step>
+             <mat-step label="Beneficiary Information" [stepControl]="beneficiaryDetailForm">
+                <app-beneficiary-info [beneficiaryInfo]="beneficiaryDetail?.BeneficiaryAccountSetup" (stepTwo)="beneficiaryDetailForm = $event"></app-beneficiary-info>
+            </mat-step>
+            <mat-step label="Transaction Summary">
+                <app-transaction-summary [step]="stepper" [allInfo]="beneficiaryObject" (saveAll) ="save()"></app-transaction-summary>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </div>
+</section>
