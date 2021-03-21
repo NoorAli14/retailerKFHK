@@ -10,34 +10,6 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class BeneficiaryTableComponent implements OnInit {
 
-    // // public truncateTextLength = truncateTextLength;
-    // public dataSource = new MatTableDataSource<any>();
-    // @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-    // @ViewChild(MatSort, {static: true}) sort: MatSort;
-    // public displayedColumns : string[] =  ['Reseller', 'CompanyName', 'ContactPerson', 'Email', 'Phone', 'PricingTitle', 'BoardedDate'];
-    // @Input() data: any;
-    // public actionControlOnHover = -1;
-    // constructor() { }
-
-    // ngOnInit(): void{
-    //   if(this.data){
-    //     this.dataSource.data = this.data.merchants;
-    //     this.dataSource.paginator = this.paginator;
-    //     this.dataSource.sort = this.sort;
-    //   }
-    // }
-    // openDialog(obj) {
-    //   const object:any = {
-    //     SendTo: obj.MerchantAccountSetup.MerchantEmail,
-    //     Subject: obj.EmailSubject,
-    //     BodyContent: obj.EmailBody,
-    //     MerchantName: `${obj.FirstName} ${obj.LastName}`,
-    //     PartnerId: obj.PartnerId
-    //   }
-    //   // const dialogRef = this._dialog.open(EmailDialogComponent, {width: '660px'});
-    //   // dialogRef.componentInstance.data = object;
-    // } 
-
     @Input('parentToChild') response;
 
     @Output() childToParent = new EventEmitter<any>();
@@ -73,20 +45,10 @@ export class BeneficiaryTableComponent implements OnInit {
     setPaginator() {
         this.paginator.pageIndex = 0
         this.paginator.pageSize = 20
-        // this.sendToParent()
     }
     ngOnChanges(changes) {
-        console.log(changes)
-        console.log(changes.response.currentValue.data)
-        this.setTable(changes.response.currentValue.data)
+        // console.log(changes)
+        this.setTable(changes['response']['currentValue'].data)
     }
-    // search() {
-    //     this.setPaginator()
-    //     // this.getAllUser(this.searchForm.value, this.paginator.pageIndex, this.paginator.pageSize)
-    // }
-    // clear() {
-    //     // this.searchForm.reset()
-    //     this.ngOnInit()
-    // }
 
 }

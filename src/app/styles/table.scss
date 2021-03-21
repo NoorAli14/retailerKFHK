@@ -5,9 +5,8 @@ table {
     text-align: center;
   }
   
-  .table-responsive {
+.table-responsive {
     overflow: auto;
-  
     .data-list {
       tr.mat-row, 
       tr.mat-footer-row{
@@ -21,7 +20,7 @@ table {
         height: 30px !important;
       }
     }
-  }
+}
   
   .mat-header-cell,
   .mat-sort-header {
@@ -33,7 +32,6 @@ table {
   
   .mat-card {
     margin: 15px auto;
-  
     .noRecordFound {
       font-size: 28px;
       font-weight: 600;
@@ -41,8 +39,8 @@ table {
       margin: 40px auto;
     }
   }
-  
-  .edit-icon{
+
+.edit-icon{
     color: #4fb0c7
 }
 .delete-icon{
